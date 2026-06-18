@@ -4,9 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A Special Invitation For Ashley ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -17,8 +19,8 @@ body{
     min-height:100vh;
     background:linear-gradient(135deg,#ffd6e7,#ffb3c6);
     font-family:Georgia,serif;
-    padding:20px;
     overflow-x:hidden;
+    padding:20px;
 }
 
 .hearts{
@@ -34,14 +36,17 @@ body{
 }
 
 @keyframes float{
+
     from{
         transform:translateY(100vh);
         opacity:1;
     }
+
     to{
         transform:translateY(-150px);
         opacity:0;
     }
+
 }
 
 .card{
@@ -53,10 +58,12 @@ body{
 
 .intro,
 .letter{
+
     background:white;
     border-radius:25px;
     padding:35px;
     box-shadow:0 15px 40px rgba(0,0,0,.15);
+
 }
 
 .intro{
@@ -65,7 +72,7 @@ body{
 
 .intro h1{
     color:#d63384;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .intro p{
@@ -79,50 +86,64 @@ body{
 }
 
 @keyframes fadeIn{
+
     from{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 .letter h2{
+
     text-align:center;
     color:#d63384;
     margin-bottom:20px;
+
 }
 
 .letter p{
+
     line-height:1.9;
-    margin-bottom:15px;
     color:#444;
+    margin-bottom:15px;
+
 }
 
 .signature{
+
     margin-top:30px;
     text-align:center;
     color:#d63384;
     font-size:20px;
+
 }
 
 .button-container{
+
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:40px;
     flex-wrap:wrap;
     margin-top:30px;
+
 }
 
 .btn{
+
     border:none;
     padding:15px 30px;
     border-radius:999px;
     cursor:pointer;
     font-size:16px;
     color:white;
+    transition:.2s;
+
 }
 
 .accept-btn{
@@ -133,13 +154,19 @@ body{
     background:#666;
 }
 
+.btn:hover{
+    transform:scale(1.05);
+}
+
 .accepted{
+
     display:none;
-    margin-top:30px;
     text-align:center;
+    margin-top:30px;
     color:#d63384;
     font-size:22px;
     font-weight:bold;
+
 }
 
 @media(max-width:768px){
@@ -152,8 +179,11 @@ body{
     .button-container{
         flex-direction:column;
         align-items:center;
+        gap:20px;
     }
+
 }
+
 </style>
 
 </head>
@@ -164,96 +194,127 @@ body{
 
 <div class="card">
 
-```
 <div class="intro" id="intro">
 
-    <h1>💌 A Letter For Ashley</h1>
+<h1>💌 A Letter For Ashley</h1>
 
-    <p>
-        Someone loves you very much and prepared
-        something special just for you.
-    </p>
+<p>
+Someone loves you very much and prepared something special just for you.
+</p>
 
-    <div class="button-container">
-        <button class="btn accept-btn" onclick="openLetter()">
-            Open Letter ❤️
-        </button>
-    </div>
+<div class="button-container">
+
+<button
+class="btn accept-btn"
+onclick="openLetter()">
+
+Open Letter ❤️
+
+</button>
+
+</div>
 
 </div>
 
 <div class="letter" id="letter">
+<h2>My Dearest Ashley ❤️</h2>
 
-    <h2>My Dearest Ashley ❤️</h2>
+<p>
+You are hereby invited to a special date with the man who loves you very much.
+</p>
 
-    <p>
-        You are hereby invited to a special date with the man
-        who loves you very much.
-    </p>
+<p>
+<strong>Date:</strong>
+Friday night for you, Saturday morning for me.
+</p>
 
-    <p><strong>Date:</strong> Friday night for you, Saturday morning for me.</p>
+<p>
+<strong>Time:</strong>
+9:00 PM (your time)
+</p>
 
-    <p><strong>Time:</strong> 9:00 PM (your time)</p>
+<p>
+<strong>Location:</strong>
+Our little corner on Discord
+</p>
 
-    <p><strong>Location:</strong> Our little corner on Discord</p>
+<p>
+<strong>Dress code:</strong>
+Your beautiful smile.
+</p>
 
-    <p><strong>Dress code:</strong> Your beautiful smile.</p>
+<p>
+The evening will include good conversation, music, laughter,
+and quality time together.
+</p>
 
-    <p>
-        The evening will include good conversation,
-        music, laughter, and quality time together.
-    </p>
+<p>
+Even though it will be Friday for you and Saturday for me,
+we'll still be sharing the same moment,
+and that's what makes it special.
+</p>
 
-    <p>
-        Even though it will be Friday for you and Saturday for me,
-        we'll still be sharing the same moment,
-        and that's what makes it special.
-    </p>
+<p>
+I can't promise a perfect date,
+but I can promise that I'll be happy
+to spend every minute of it with you.
+</p>
 
-    <p>
-        I can't promise a perfect date,
-        but I can promise that I'll be happy to spend
-        every minute of it with you.
-    </p>
+<p>
+Please be on time, my love.
+Someone is already looking forward to seeing you.
+</p>
 
-    <p>
-        Please be on time, my love.
-        Someone is already looking forward to seeing you.
-    </p>
+<div class="signature">
 
-    <div class="signature">
-        With all my love,<br>
-        Your Lucky ❤️
-    </div>
-
-    <div class="button-container">
-
-        <button class="btn accept-btn"
-            onclick="acceptInvitation()">
-            Accept Invitation ❤️
-        </button>
-
-        <button class="btn decline-btn"
-            id="declineBtn">
-            Decline Invitation 💔
-        </button>
-
-    </div>
-
-    <div class="accepted" id="accepted">
-        ❤️ Invitation Accepted ❤️<br><br>
-        Lucky is smiling right now 😊
-    </div>
+With all my love,<br>
+Your Lucky ❤️
 
 </div>
-```
+
+<div class="button-container">
+
+<button
+class="btn accept-btn"
+onclick="acceptInvitation()">
+
+Accept Invitation ❤️
+
+</button>
+
+<button
+class="btn decline-btn"
+id="declineBtn">
+
+Decline Invitation 💔
+
+</button>
+
+</div>
+
+<div
+class="accepted"
+id="accepted">
+
+❤️ Invitation Accepted ❤️
+
+<br><br>
+
+Lucky is smiling right now 😊
+
+</div>
+
+</div>
 
 </div>
 
 <audio id="music" loop>
-    <source src="Xoloitzcuintle Chicloso [N6ns-_Eo-ns].mp3" type="audio/mpeg">
-</audio>
 
+<source
+src="Xoloitzcuintle Chicloso [N6ns-_Eo-ns].mp3"
+type="audio/mpeg">
+
+</audio>
 <script>
 
 function openLetter(){
@@ -264,6 +325,7 @@ function openLetter(){
     document.getElementById("music")
         .play()
         .catch(()=>{});
+
 }
 
 function acceptInvitation(){
@@ -273,6 +335,7 @@ function acceptInvitation(){
     alert(
         "❤️ Date Accepted ❤️\n\nLucky is now extremely happy."
     );
+
 }
 
 function createHeart(){
@@ -291,6 +354,7 @@ function createHeart(){
     setTimeout(()=>{
         heart.remove();
     },9000);
+
 }
 
 setInterval(createHeart,400);
@@ -301,6 +365,22 @@ function moveDeclineButton(){
 
     const btn=document.getElementById("declineBtn");
 
+    const texts=[
+
+        "Decline 💔",
+        "Are you sure? 🥺",
+        "Really? 😭",
+        "Please don't 😢",
+        "Nice try Ashley 😘"
+
+    ];
+
+    if(declineAttempts<texts.length){
+
+        btn.innerHTML=texts[declineAttempts];
+
+    }
+
     const maxX=
         window.innerWidth-btn.offsetWidth-30;
 
@@ -308,17 +388,23 @@ function moveDeclineButton(){
         window.innerHeight-btn.offsetHeight-30;
 
     btn.style.position="fixed";
-    btn.style.left=(Math.random()*maxX)+"px";
-    btn.style.top=(Math.random()*maxY)+"px";
+
+    btn.style.left=
+        (Math.random()*maxX)+"px";
+
+    btn.style.top=
+        (Math.random()*maxY)+"px";
 
     declineAttempts++;
 
-    if(declineAttempts===5){
+    if(declineAttempts===8){
 
         alert(
             "Nice try Ashley 😘\n\nYou were never supposed to decline."
         );
+
     }
+
 }
 
 setTimeout(()=>{
@@ -336,12 +422,29 @@ setTimeout(()=>{
     );
 
     btn.addEventListener(
+        "touchstart",
+        function(e){
+
+            e.preventDefault();
+
+            moveDeclineButton();
+
+        },
+
+        {passive:false}
+
+    );
+
+    btn.addEventListener(
         "click",
         function(e){
 
             e.preventDefault();
+
             moveDeclineButton();
+
         }
+
     );
 
 },500);

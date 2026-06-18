@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>A Special Invitation For Ashley ❤️</title>
 
@@ -16,85 +20,142 @@
 }
 
 body{
+
     min-height:100vh;
-    background:linear-gradient(135deg,#ffd6e7,#ffb3c6);
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffd6e7,
+    #ffb3c6
+    );
+
     font-family:Georgia,serif;
+
     overflow-x:hidden;
+
     padding:20px;
+
 }
 
 .hearts{
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     z-index:0;
+
 }
 
 .heart{
+
     position:absolute;
+
     animation:float 8s linear infinite;
+
 }
 
 @keyframes float{
 
     from{
-        transform:translateY(100vh);
+
+        transform:
+        translateY(100vh);
+
         opacity:1;
+
     }
 
     to{
-        transform:translateY(-150px);
+
+        transform:
+        translateY(-150px);
+
         opacity:0;
+
     }
 
 }
 
 .card{
+
     max-width:850px;
+
     margin:40px auto;
+
     position:relative;
+
     z-index:1;
+
 }
 
 .intro,
 .letter{
 
     background:white;
+
     border-radius:25px;
+
     padding:35px;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    box-shadow:
+
+    0 15px 40px
+    rgba(0,0,0,.15);
 
 }
 
 .intro{
+
     text-align:center;
+
 }
 
 .intro h1{
+
     color:#d63384;
+
     margin-bottom:20px;
+
 }
 
 .intro p{
+
     color:#555;
+
     line-height:1.8;
+
 }
 
 .letter{
+
     display:none;
+
     animation:fadeIn 1s ease;
+
 }
 
 @keyframes fadeIn{
 
     from{
+
         opacity:0;
-        transform:translateY(20px);
+
+        transform:
+        translateY(20px);
+
     }
 
     to{
+
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+        translateY(0);
+
     }
 
 }
@@ -102,7 +163,9 @@ body{
 .letter h2{
 
     text-align:center;
+
     color:#d63384;
+
     margin-bottom:20px;
 
 }
@@ -110,7 +173,9 @@ body{
 .letter p{
 
     line-height:1.9;
+
     color:#444;
+
     margin-bottom:15px;
 
 }
@@ -118,69 +183,148 @@ body{
 .signature{
 
     margin-top:30px;
+
     text-align:center;
+
     color:#d63384;
+
     font-size:20px;
 
 }
-
 .button-container{
 
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-    margin-top:30px;
+```
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+margin-top:30px;
+```
 
 }
 
 .btn{
 
-    border:none;
-    padding:15px 30px;
-    border-radius:999px;
-    cursor:pointer;
-    font-size:16px;
-    color:white;
-    transition:.2s;
+```
+border:none;
+
+padding:15px 30px;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:16px;
+
+color:white;
+
+transition:.2s;
+```
 
 }
 
 .accept-btn{
-    background:#d63384;
+
+```
+background:#d63384;
+```
+
 }
 
 .decline-btn{
-    background:#666;
+
+```
+background:#666;
+```
+
 }
 
 .btn:hover{
-    transform:scale(1.05);
+
+```
+transform:scale(1.05);
+```
+
 }
 
 .accepted{
 
-    display:none;
-    text-align:center;
-    margin-top:30px;
-    color:#d63384;
-    font-size:22px;
-    font-weight:bold;
+```
+display:none;
+
+text-align:center;
+
+margin-top:30px;
+
+color:#d63384;
+
+font-size:22px;
+
+font-weight:bold;
+```
+
+}
+
+#cat{
+
+```
+position:fixed;
+
+bottom:15px;
+
+right:15px;
+
+width:80px;
+
+z-index:999;
+
+animation:bounceCat 2s infinite;
+```
+
+}
+
+@keyframes bounceCat{
+
+```
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-10px);
+
+}
+```
 
 }
 
 @media(max-width:768px){
 
-    .intro,
-    .letter{
-        padding:22px;
-    }
+```
+.intro,
+.letter{
 
-    .button-container{
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
-    }
+    padding:22px;
+
+}
+
+.button-container{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+```
 
 }
 
@@ -190,22 +334,35 @@ body{
 
 <body>
 
-<div class="hearts" id="hearts"></div>
+<div class="hearts"
+id="hearts">
+
+</div>
 
 <div class="card">
 
-<div class="intro" id="intro">
+<div
+class="intro"
+id="intro">
 
-<h1>💌 A Letter For Ashley</h1>
+<h1>
+
+💌 A Letter For Ashley
+
+</h1>
 
 <p>
+
 Someone loves you very much and prepared something special just for you.
+
 </p>
 
 <div class="button-container">
 
 <button
+
 class="btn accept-btn"
+
 onclick="openLetter()">
 
 Open Letter ❤️
@@ -216,58 +373,88 @@ Open Letter ❤️
 
 </div>
 
-<div class="letter" id="letter">
-<h2>My Dearest Ashley ❤️</h2>
+<div
+class="letter"
+id="letter">
 
+<h2>
+
+My Dearest Ashley ❤️
+
+</h2>
 <p>
+
 You are hereby invited to a special date with the man who loves you very much.
+
 </p>
 
 <p>
+
 <strong>Date:</strong>
+
 Friday night for you, Saturday morning for me.
+
 </p>
 
 <p>
+
 <strong>Time:</strong>
+
 9:00 PM (your time)
+
 </p>
 
 <p>
+
 <strong>Location:</strong>
+
 Our little corner on Discord
+
 </p>
 
 <p>
+
 <strong>Dress code:</strong>
+
 Your beautiful smile.
+
 </p>
 
 <p>
+
 The evening will include good conversation, music, laughter,
 and quality time together.
+
 </p>
 
 <p>
+
 Even though it will be Friday for you and Saturday for me,
 we'll still be sharing the same moment,
 and that's what makes it special.
+
 </p>
 
 <p>
+
 I can't promise a perfect date,
 but I can promise that I'll be happy
 to spend every minute of it with you.
+
 </p>
 
 <p>
+
 Please be on time, my love.
+
 Someone is already looking forward to seeing you.
+
 </p>
 
 <div class="signature">
 
 With all my love,<br>
+
 Your Lucky ❤️
 
 </div>
@@ -275,7 +462,9 @@ Your Lucky ❤️
 <div class="button-container">
 
 <button
+
 class="btn accept-btn"
+
 onclick="acceptInvitation()">
 
 Accept Invitation ❤️
@@ -283,7 +472,9 @@ Accept Invitation ❤️
 </button>
 
 <button
+
 class="btn decline-btn"
+
 id="declineBtn">
 
 Decline Invitation 💔
@@ -293,7 +484,9 @@ Decline Invitation 💔
 </div>
 
 <div
+
 class="accepted"
+
 id="accepted">
 
 ❤️ Invitation Accepted ❤️
@@ -311,7 +504,9 @@ Lucky is smiling right now 😊
 <audio id="music" loop>
 
 <source
+
 src="Xoloitzcuintle Chicloso [N6ns-_Eo-ns].mp3"
+
 type="audio/mpeg">
 
 </audio>
@@ -320,11 +515,12 @@ type="audio/mpeg">
 function openLetter(){
 
     document.getElementById("intro").style.display="none";
+
     document.getElementById("letter").style.display="block";
 
     document.getElementById("music")
-        .play()
-        .catch(()=>{});
+    .play()
+    .catch(()=>{});
 
 }
 
@@ -333,7 +529,9 @@ function acceptInvitation(){
     document.getElementById("accepted").style.display="block";
 
     alert(
-        "❤️ Date Accepted ❤️\n\nLucky is now extremely happy."
+
+"❤️ Date Accepted ❤️\n\nLucky is now extremely happy."
+
     );
 
 }
@@ -343,16 +541,23 @@ function createHeart(){
     const heart=document.createElement("div");
 
     heart.className="heart";
+
     heart.innerHTML="❤️";
 
     heart.style.left=Math.random()*100+"vw";
+
     heart.style.fontSize=(Math.random()*20+15)+"px";
+
     heart.style.animationDuration=(Math.random()*4+5)+"s";
 
-    document.getElementById("hearts").appendChild(heart);
+    document
+    .getElementById("hearts")
+    .appendChild(heart);
 
     setTimeout(()=>{
+
         heart.remove();
+
     },9000);
 
 }
@@ -363,44 +568,56 @@ let declineAttempts=0;
 
 function moveDeclineButton(){
 
-    const btn=document.getElementById("declineBtn");
+    const btn=
+    document.getElementById("declineBtn");
 
     const texts=[
 
         "Decline 💔",
+
         "Are you sure? 🥺",
+
         "Really? 😭",
+
         "Please don't 😢",
+
         "Nice try Ashley 😘"
 
     ];
 
     if(declineAttempts<texts.length){
 
-        btn.innerHTML=texts[declineAttempts];
+        btn.innerHTML=
+        texts[declineAttempts];
 
     }
 
     const maxX=
-        window.innerWidth-btn.offsetWidth-30;
+    window.innerWidth-
+    btn.offsetWidth-
+    30;
 
     const maxY=
-        window.innerHeight-btn.offsetHeight-30;
+    window.innerHeight-
+    btn.offsetHeight-
+    30;
 
     btn.style.position="fixed";
 
     btn.style.left=
-        (Math.random()*maxX)+"px";
+    (Math.random()*maxX)+"px";
 
     btn.style.top=
-        (Math.random()*maxY)+"px";
+    (Math.random()*maxY)+"px";
 
     declineAttempts++;
 
     if(declineAttempts===8){
 
         alert(
-            "Nice try Ashley 😘\n\nYou were never supposed to decline."
+
+"Nice try Ashley 😘\n\nYou were never supposed to decline."
+
         );
 
     }
@@ -409,7 +626,8 @@ function moveDeclineButton(){
 
 setTimeout(()=>{
 
-    const btn=document.getElementById("declineBtn");
+    const btn=
+    document.getElementById("declineBtn");
 
     btn.addEventListener(
         "mouseenter",
@@ -423,6 +641,7 @@ setTimeout(()=>{
 
     btn.addEventListener(
         "touchstart",
+
         function(e){
 
             e.preventDefault();
@@ -436,7 +655,9 @@ setTimeout(()=>{
     );
 
     btn.addEventListener(
+
         "click",
+
         function(e){
 
             e.preventDefault();
@@ -451,5 +672,14 @@ setTimeout(()=>{
 
 </script>
 
+<img
+
+id="cat"
+
+src="https://cdn-icons-png.flaticon.com/512/616/616430.png"
+
+alt="Cat">
+
 </body>
+
 </html>

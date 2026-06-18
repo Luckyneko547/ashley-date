@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>A Special Invitation For Ashley ❤️</title>
 
 <style>
@@ -15,11 +14,11 @@
 }
 
 body{
+    min-height:100vh;
     background:linear-gradient(135deg,#ffd6e7,#ffb3c6);
     font-family:Georgia,serif;
-    min-height:100vh;
     padding:20px;
-    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 .hearts{
@@ -46,9 +45,8 @@ body{
 }
 
 .card{
-    width:100%;
     max-width:850px;
-    margin:auto;
+    margin:40px auto;
     position:relative;
     z-index:1;
 }
@@ -92,43 +90,52 @@ body{
 }
 
 .letter h2{
-    color:#d63384;
     text-align:center;
+    color:#d63384;
     margin-bottom:20px;
 }
 
 .letter p{
-    color:#444;
     line-height:1.9;
     margin-bottom:15px;
+    color:#444;
 }
 
 .signature{
-    margin-top:25px;
+    margin-top:30px;
     text-align:center;
     color:#d63384;
     font-size:20px;
 }
 
+.button-container{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
 .btn{
-    display:block;
-    margin:25px auto 0;
     border:none;
-    background:#d63384;
-    color:white;
     padding:15px 30px;
     border-radius:999px;
     cursor:pointer;
     font-size:16px;
+    color:white;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+.accept-btn{
+    background:#d63384;
+}
+
+.decline-btn{
+    background:#666;
 }
 
 .accepted{
     display:none;
-    margin-top:25px;
+    margin-top:30px;
     text-align:center;
     color:#d63384;
     font-size:22px;
@@ -137,21 +144,14 @@ body{
 
 @media(max-width:768px){
 
-    body{
-        padding:12px;
-    }
-
     .intro,
     .letter{
         padding:22px;
     }
 
-    .letter h2{
-        font-size:24px;
-    }
-
-    .letter p{
-        font-size:15px;
+    .button-container{
+        flex-direction:column;
+        align-items:center;
     }
 }
 </style>
@@ -166,15 +166,20 @@ body{
 
 ```
 <div class="intro" id="intro">
+
     <h1>💌 A Letter For Ashley</h1>
 
     <p>
-        Someone loves you very much and prepared something special just for you.
+        Someone loves you very much and prepared
+        something special just for you.
     </p>
 
-    <button class="btn" onclick="openLetter()">
-        Open Letter ❤️
-    </button>
+    <div class="button-container">
+        <button class="btn accept-btn" onclick="openLetter()">
+            Open Letter ❤️
+        </button>
+    </div>
+
 </div>
 
 <div class="letter" id="letter">
@@ -182,7 +187,8 @@ body{
     <h2>My Dearest Ashley ❤️</h2>
 
     <p>
-        You are hereby invited to a special date with the man who loves you very much.
+        You are hereby invited to a special date with the man
+        who loves you very much.
     </p>
 
     <p><strong>Date:</strong> Friday night for you, Saturday morning for me.</p>
@@ -194,8 +200,8 @@ body{
     <p><strong>Dress code:</strong> Your beautiful smile.</p>
 
     <p>
-        The evening will include good conversation, music, laughter,
-        and quality time together.
+        The evening will include good conversation,
+        music, laughter, and quality time together.
     </p>
 
     <p>
@@ -206,8 +212,8 @@ body{
 
     <p>
         I can't promise a perfect date,
-        but I can promise that I'll be happy
-        to spend every minute of it with you.
+        but I can promise that I'll be happy to spend
+        every minute of it with you.
     </p>
 
     <p>
@@ -220,13 +226,23 @@ body{
         Your Lucky ❤️
     </div>
 
-    <button class="btn" onclick="acceptInvitation()">
-        Accept Invitation ❤️
-    </button>
+    <div class="button-container">
+
+        <button class="btn accept-btn"
+            onclick="acceptInvitation()">
+            Accept Invitation ❤️
+        </button>
+
+        <button class="btn decline-btn"
+            id="declineBtn">
+            Decline Invitation 💔
+        </button>
+
+    </div>
 
     <div class="accepted" id="accepted">
         ❤️ Invitation Accepted ❤️<br><br>
-        Lucky is smiling right now.
+        Lucky is smiling right now 😊
     </div>
 
 </div>
@@ -241,16 +257,22 @@ body{
 <script>
 
 function openLetter(){
+
     document.getElementById("intro").style.display="none";
     document.getElementById("letter").style.display="block";
 
     document.getElementById("music")
-    .play()
-    .catch(()=>{});
+        .play()
+        .catch(()=>{});
 }
 
 function acceptInvitation(){
+
     document.getElementById("accepted").style.display="block";
+
+    alert(
+        "❤️ Date Accepted ❤️\n\nLucky is now extremely happy."
+    );
 }
 
 function createHeart(){
@@ -272,6 +294,57 @@ function createHeart(){
 }
 
 setInterval(createHeart,400);
+
+let declineAttempts=0;
+
+function moveDeclineButton(){
+
+    const btn=document.getElementById("declineBtn");
+
+    const maxX=
+        window.innerWidth-btn.offsetWidth-30;
+
+    const maxY=
+        window.innerHeight-btn.offsetHeight-30;
+
+    btn.style.position="fixed";
+    btn.style.left=(Math.random()*maxX)+"px";
+    btn.style.top=(Math.random()*maxY)+"px";
+
+    declineAttempts++;
+
+    if(declineAttempts===5){
+
+        alert(
+            "Nice try Ashley 😘\n\nYou were never supposed to decline."
+        );
+    }
+}
+
+setTimeout(()=>{
+
+    const btn=document.getElementById("declineBtn");
+
+    btn.addEventListener(
+        "mouseenter",
+        moveDeclineButton
+    );
+
+    btn.addEventListener(
+        "mouseover",
+        moveDeclineButton
+    );
+
+    btn.addEventListener(
+        "click",
+        function(e){
+
+            e.preventDefault();
+            moveDeclineButton();
+        }
+    );
+
+},500);
 
 </script>
 

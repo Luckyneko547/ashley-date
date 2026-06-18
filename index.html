@@ -15,19 +15,18 @@
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     background:linear-gradient(135deg,#ffd6e7,#ffb3c6);
-    font-family:Georgia, serif;
-    overflow:hidden;
+    font-family:Georgia,serif;
+    min-height:100vh;
+    padding:20px;
+    overflow-y:auto;
 }
 
 .hearts{
     position:fixed;
     inset:0;
     pointer-events:none;
+    z-index:0;
 }
 
 .heart{
@@ -47,16 +46,23 @@ body{
 }
 
 .card{
-    width:90%;
+    width:100%;
     max-width:850px;
+    margin:auto;
+    position:relative;
+    z-index:1;
+}
+
+.intro,
+.letter{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 .intro{
-    background:white;
-    padding:50px;
-    border-radius:25px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 .intro h1{
@@ -66,16 +72,52 @@ body{
 
 .intro p{
     color:#555;
-    line-height:1.7;
+    line-height:1.8;
+}
+
+.letter{
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.letter h2{
+    color:#d63384;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.letter p{
+    color:#444;
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.signature{
+    margin-top:25px;
+    text-align:center;
+    color:#d63384;
+    font-size:20px;
 }
 
 .btn{
-    margin-top:25px;
+    display:block;
+    margin:25px auto 0;
     border:none;
     background:#d63384;
     color:white;
     padding:15px 30px;
-    border-radius:50px;
+    border-radius:999px;
     cursor:pointer;
     font-size:16px;
 }
@@ -84,50 +126,33 @@ body{
     transform:scale(1.05);
 }
 
-.letter{
-    display:none;
-    background:white;
-    padding:45px;
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
-    animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:scale(.9);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-.letter h2{
-    color:#d63384;
-    margin-bottom:20px;
-}
-
-.letter p{
-    line-height:1.9;
-    margin-bottom:14px;
-    color:#444;
-}
-
-.signature{
-    margin-top:25px;
-    color:#d63384;
-    font-size:20px;
-}
-
 .accepted{
     display:none;
-    text-align:center;
     margin-top:25px;
-    font-size:22px;
+    text-align:center;
     color:#d63384;
+    font-size:22px;
     font-weight:bold;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:12px;
+    }
+
+    .intro,
+    .letter{
+        padding:22px;
+    }
+
+    .letter h2{
+        font-size:24px;
+    }
+
+    .letter p{
+        font-size:15px;
+    }
 }
 </style>
 
@@ -144,8 +169,7 @@ body{
     <h1>💌 A Letter For Ashley</h1>
 
     <p>
-        Someone loves you very much and prepared
-        something special just for you.
+        Someone loves you very much and prepared something special just for you.
     </p>
 
     <button class="btn" onclick="openLetter()">
@@ -158,8 +182,7 @@ body{
     <h2>My Dearest Ashley ❤️</h2>
 
     <p>
-        You are hereby invited to a special date with the man
-        who loves you very much.
+        You are hereby invited to a special date with the man who loves you very much.
     </p>
 
     <p><strong>Date:</strong> Friday night for you, Saturday morning for me.</p>
@@ -171,20 +194,20 @@ body{
     <p><strong>Dress code:</strong> Your beautiful smile.</p>
 
     <p>
-        The evening will include good conversation,
-        music, laughter, and quality time together.
+        The evening will include good conversation, music, laughter,
+        and quality time together.
     </p>
 
     <p>
         Even though it will be Friday for you and Saturday for me,
-        we'll still be sharing the same moment, and that's what
-        makes it special.
+        we'll still be sharing the same moment,
+        and that's what makes it special.
     </p>
 
     <p>
         I can't promise a perfect date,
-        but I can promise that I'll be happy to spend
-        every minute of it with you.
+        but I can promise that I'll be happy
+        to spend every minute of it with you.
     </p>
 
     <p>
@@ -221,8 +244,9 @@ function openLetter(){
     document.getElementById("intro").style.display="none";
     document.getElementById("letter").style.display="block";
 
-    const music=document.getElementById("music");
-    music.play().catch(()=>{});
+    document.getElementById("music")
+    .play()
+    .catch(()=>{});
 }
 
 function acceptInvitation(){
@@ -230,9 +254,10 @@ function acceptInvitation(){
 }
 
 function createHeart(){
+
     const heart=document.createElement("div");
 
-    heart.classList.add("heart");
+    heart.className="heart";
     heart.innerHTML="❤️";
 
     heart.style.left=Math.random()*100+"vw";
